@@ -5,9 +5,9 @@
     <color name="purple">#9C27B0</color>
     <color name="blue">#3F51B5</color>
 
-    <color name="background_component">#000002</color>
+    <color name="background_component">#00002E</color>
     <color name="backgroung_component_selected">#030E4A</color>
-    <color name="background_app">#0E0B20</color>
+    <color name="background_app">#2196F3</color>
     <color name="background_button">#00BCD4</color>
     <color name="title_text">#6A6E81</color>
 

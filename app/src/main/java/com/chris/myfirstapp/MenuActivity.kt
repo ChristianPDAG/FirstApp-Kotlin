@@ -13,7 +13,7 @@ class MenuActivity : AppCompatActivity() {
         val btnSaludApp = findViewById<AppCompatButton>(R.id.btnSaludApp)
         val btnIMCApp = findViewById<AppCompatButton>(R.id.btnIMCApp)
         btnSaludApp.setOnClickListener{ navigateToSaludApp()  }
-        btnSaludApp.setOnClickListener{ navigateToIMCApp()  }
+        btnIMCApp.setOnClickListener{ navigateToIMCApp()  }
 
     }
     private fun navigateToIMCApp(){
