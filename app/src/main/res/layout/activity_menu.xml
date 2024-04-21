@@ -27,4 +27,15 @@
         android:textColor="@color/white"/>
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTODOApp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TODO App"
+        android:background="@color/blue"
+        android:textColor="@color/white"/>
+
+
+
 </LinearLayout>

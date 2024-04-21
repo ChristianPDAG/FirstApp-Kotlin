@@ -11,6 +11,7 @@
 
     <string name="error">error</string>
 
+    <!-- IMC App -->
     <string name="title_bajo_peso">Bajo peso</string>
     <string name="description_bajo_peso">Estás por debajo de lo óptimo para tu peso y altura.</string>
 
@@ -23,5 +24,14 @@
     <string name="title_obesidad">Obesidad</string>
     <string name="description_obesidad">Estás muy por encima de lo óptimo para tu peso y altura.</string>
 
+    <!-- todoApp -->
+    <string name="todo_tittle">Bienvenido</string>
+    <string name="todo_category">Categorías:</string>
+    <string name="todo_task">Tareas:</string>
+    <string name="dialog_add_task">Añada una tarea</string>
+    <string name="dialog_todo_other_category">Otros</string>
+    <string name="dialog_todo_personal_category">Personal</string>
+    <string name="dialog_todo_business_category">Negocio</string>
+    <string name="dialog_new_task">Crear tarea</string>
 
 </resources>

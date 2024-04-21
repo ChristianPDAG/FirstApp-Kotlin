@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
+import com.chris.myfirstapp.Todoapp.TodoActivity
 import com.chris.myfirstapp.imccalculator.IMCAppActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -12,9 +13,16 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
         val btnSaludApp = findViewById<AppCompatButton>(R.id.btnSaludApp)
         val btnIMCApp = findViewById<AppCompatButton>(R.id.btnIMCApp)
+        val btnTODOApp = findViewById<AppCompatButton>(R.id.btnTODOApp)
+
         btnSaludApp.setOnClickListener{ navigateToSaludApp()  }
         btnIMCApp.setOnClickListener{ navigateToIMCApp()  }
+        btnTODOApp.setOnClickListener { navigateToTODOApp() }
 
+    }
+    private fun navigateToTODOApp(){
+        val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
     }
     private fun navigateToIMCApp(){
         val intent = Intent(this, IMCAppActivity::class.java)
@@ -24,4 +32,6 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+
+
 }
