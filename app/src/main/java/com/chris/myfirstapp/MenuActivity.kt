@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import com.chris.myfirstapp.Todoapp.TodoActivity
 import com.chris.myfirstapp.imccalculator.IMCAppActivity
+import com.chris.myfirstapp.superheroapp.SuperHeroListActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,12 +15,20 @@ class MenuActivity : AppCompatActivity() {
         val btnSaludApp = findViewById<AppCompatButton>(R.id.btnSaludApp)
         val btnIMCApp = findViewById<AppCompatButton>(R.id.btnIMCApp)
         val btnTODOApp = findViewById<AppCompatButton>(R.id.btnTODOApp)
+        val btnSuperhero = findViewById<AppCompatButton>(R.id.btnSuperhero)
 
         btnSaludApp.setOnClickListener{ navigateToSaludApp()  }
         btnIMCApp.setOnClickListener{ navigateToIMCApp()  }
         btnTODOApp.setOnClickListener { navigateToTODOApp() }
+        btnSuperhero.setOnClickListener { navigateToSuperheroApp() }
 
     }
+
+    private fun navigateToSuperheroApp() {
+        val intent = Intent(this, SuperHeroListActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun navigateToTODOApp(){
         val intent = Intent(this, TodoActivity::class.java)
         startActivity(intent)

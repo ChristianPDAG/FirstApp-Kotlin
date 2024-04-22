@@ -13,10 +13,12 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".Todoapp.TodoActivity"
-
-            android:theme = "@style/Base.Theme.TodoApp"
+            android:name=".superheroapp.SuperHeroListActivity"
             android:exported="false" />
+        <activity
+            android:name=".Todoapp.TodoActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.TodoApp" />
         <activity
             android:name=".imccalculator.ResultIMCActivity"
             android:exported="false" />
