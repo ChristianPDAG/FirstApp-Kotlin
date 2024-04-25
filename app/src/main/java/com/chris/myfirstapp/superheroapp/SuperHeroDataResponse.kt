@@ -10,5 +10,8 @@ data class SuperHeroDataResponse(
 data class SuperheroItemResponse(
     // Aquí se especifica a la lista de datos que quieres acceder dentro de la SuperHeroDataResponse
     @SerializedName("id") val superheroId:String,
-    @SerializedName("name") val name:String
+    @SerializedName("name") val name:String,
+    @SerializedName("image") val superheroImage: SuperheroImageResponse
 )
+
+data class SuperheroImageResponse( @SerializedName("url") val url:String)

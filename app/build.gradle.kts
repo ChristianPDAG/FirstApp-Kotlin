@@ -52,6 +52,8 @@ dependencies {
     // gson converter
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //picasso
+    implementation ("com.squareup.picasso:picasso:2.8")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
