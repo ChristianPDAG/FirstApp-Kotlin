@@ -1,16 +1,21 @@
 package com.chris.myfirstapp.superheroapp
 
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.chris.myfirstapp.R
+import com.chris.myfirstapp.databinding.ActivityDetailSuperheroBinding
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class DetailSuperheroActivity : AppCompatActivity() {
 
@@ -18,9 +23,12 @@ class DetailSuperheroActivity : AppCompatActivity() {
         const val EXTRA_ID = "extra_id"
     }
 
+    private lateinit var binding: ActivityDetailSuperheroBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_superhero)
+        binding = ActivityDetailSuperheroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val id: String =
             intent.getStringExtra(EXTRA_ID).orEmpty()  //si es nulo devuelve un vacio (.orEmpty)
         getSuperheroInformation(id)
@@ -38,7 +46,35 @@ class DetailSuperheroActivity : AppCompatActivity() {
         }
     }
 
-    private fun createdUI(body: SuperHeroDetailResponse) {
+    private fun createdUI(superhero: SuperHeroDetailResponse) {
+        //librería.obtener().cargar(url de imagen).dentrode(ImageView:ivSuperhero)
+        Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
+        binding.tvSuperheroName.text = superhero.name
+        prepareStats(superhero.powerstats)
+        binding.tvSuperheroRealName.text = superhero.biography.fullName
+        binding.tvPublisher.text = superhero.biography.publisher
+
+    }
+
+    private fun prepareStats(powerstats: PowerStatsResponse) {
+        updateHeight(binding.viewCombat, powerstats.combat)
+        updateHeight(binding.viewSpeed, powerstats.speed)
+        updateHeight(binding.viewDurability, powerstats.durability)
+        updateHeight(binding.viewIntelligence, powerstats.intelligence)
+        updateHeight(binding.viewStrength, powerstats.strength)
+        updateHeight(binding.viewPower, powerstats.power)
+
+    }
+
+    private fun updateHeight(view: View, stat: String){
+        val params = view.layoutParams
+        params.height = pxToDp(stat.toFloat())
+        view.layoutParams = params
+    }
+
+    private fun pxToDp(px:Float):Int{
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,px,resources.displayMetrics).roundToInt()
+
 
     }
 

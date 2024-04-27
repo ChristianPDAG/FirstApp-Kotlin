@@ -33,7 +33,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
+    //Conexión a binding para referenciar inputs del xml
     viewBinding{
         enable = true
     }
