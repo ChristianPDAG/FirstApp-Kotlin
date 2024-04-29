@@ -39,7 +39,7 @@
     <color name="super_stat_power">#FFEB3B</color>
     <color name="super_stat_combat">#673AB7</color>
 
-    <color name="settings_color_mode">#000000</color>
+    <color name="settings_color_mode">#FFFFFF</color>
 
 
 </resources>

@@ -45,5 +45,13 @@
         android:background="@color/blue"
         android:textColor="@color/white"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSettings"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:background="@color/blue"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
